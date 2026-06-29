@@ -1,0 +1,88 @@
+[
+  {
+    "id": "1",
+    "author": {
+      "name": "Marcus Webb",
+      "handle": "@marcuswebb",
+      "initials": "MW",
+      "color": "#1E2D45"
+    },
+    "tag": "learned",
+    "content": "CSS container queries finally clicked for me today. The key insight: you query the parent container's size, not the viewport. This means a card component can adapt its layout based on where it's placed — sidebar vs main content. Game changer for truly reusable components.",
+    "timestamp": "2h ago",
+    "likes": 47,
+    "comments": 8
+  },
+  {
+    "id": "2",
+    "author": {
+      "name": "Priya Nair",
+      "handle": "@priyanair",
+      "initials": "PN",
+      "color": "#2D1E45"
+    },
+    "tag": "fixed",
+    "content": "Spent 3 hours on a bug that turned out to be a stale closure in a useEffect. The event listener was capturing the initial state value and never seeing updates. Fix: moved the handler inside the effect, added it to the dependency array. Classic.",
+    "timestamp": "4h ago",
+    "likes": 83,
+    "comments": 14,
+    "bookmarked": true
+  },
+  {
+    "id": "3",
+    "author": {
+      "name": "Tom Eriksson",
+      "handle": "@tomerik",
+      "initials": "TE",
+      "color": "#1A3028"
+    },
+    "tag": "shipped",
+    "content": "Launched the search feature on v0.8.0 today. Built with Fuse.js for fuzzy matching — kept it client-side since our dataset is small enough. Added keyboard navigation (↑↓ to move, Enter to select, Esc to close). Feels solid.",
+    "timestamp": "6h ago",
+    "likes": 121,
+    "comments": 22
+  },
+  {
+    "id": "4",
+    "author": {
+      "name": "Aisha Kamara",
+      "handle": "@aishak",
+      "initials": "AK",
+      "color": "#3A2818"
+    },
+    "tag": "reading",
+    "content": "Working through \"A Philosophy of Software Design\" by Ousterhout. The distinction between deep vs shallow modules is clarifying a lot of API design decisions I've made intuitively but couldn't articulate. Highly recommend for anyone thinking hard about abstractions.",
+    "timestamp": "1d ago",
+    "likes": 64,
+    "comments": 7,
+    "bookmarked": true
+  },
+  {
+    "id": "5",
+    "author": {
+      "name": "Marcus Webb",
+      "handle": "@marcuswebb",
+      "initials": "MW",
+      "color": "#1E2D45"
+    },
+    "tag": "learned",
+    "content": "TIL: you can use the `inert` HTML attribute to disable an entire subtree of the DOM — no tab focus, no pointer events, no accessibility announcements. Way cleaner than setting tabindex=-1 on every child. Browser support is now solid.",
+    "timestamp": "1d ago",
+    "likes": 39,
+    "comments": 5
+  },
+  {
+    "id": "6",
+    "author": {
+      "name": "Priya Nair",
+      "handle": "@priyanair",
+      "initials": "PN",
+      "color": "#2D1E45"
+    },
+    "tag": "shipped",
+    "content": "Dark mode toggle is live. Used CSS custom properties and a data attribute on <html> — no flash of wrong theme thanks to a small inline script before React hydrates. The system preference fallback works too.",
+    "timestamp": "2d ago",
+    "likes": 92,
+    "comments": 18
+  }
+]
