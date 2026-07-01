@@ -23,6 +23,7 @@ export default function LogCard({ entry }: Props) {
         border: "1px solid #232323",
         borderRadius: 12,
         padding: "16px 20px",
+        marginBottom: "20px"
       }}
       className="mx-auto max-w-lg"
     >

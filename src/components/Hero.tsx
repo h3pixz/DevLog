@@ -67,7 +67,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 580, margin: "0 auto", padding: "0 24px 100px" }}>
+      <div style={{ maxWidth: 580, margin: "0 auto", padding: "0 24px" }}>
         <p
           style={{
             fontSize: 11,
@@ -81,8 +81,6 @@ export default function Hero() {
         >
           Recent from the community
         </p>
-
-        <div className="flex flex-col gap-2.5"></div>
       </div>
     </>
   );
