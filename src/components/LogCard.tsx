@@ -1,4 +1,4 @@
-import { FaRegUserCircle } from "react-icons/fa";
+
 
 export type LogEntry = {
   id: string;
@@ -28,16 +28,23 @@ export default function LogCard({ entry }: Props) {
       className="mx-auto max-w-lg"
     >
       <div className="flex items-start gap-3">
-        <button
+        <div
           style={{
-            background: "none",
-            border: "none",
-            padding: 0,
+            width: 32,
+            height: 32,
+            borderRadius: "50%",
+            backgroundColor: entry.author.color,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "#fff",
+            fontSize: 12,
+            fontWeight: 600,
             flexShrink: 0,
           }}
         >
-          <FaRegUserCircle size={28} />
-        </button>
+          {entry.author.initials}
+        </div>
 
         <div style={{ flex: 1, minWidth: 0 }}>
           <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-2">
