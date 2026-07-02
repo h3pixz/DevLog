@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import LogCard from "./LogCard";
 import entries from "../locales/entries.json"
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -41,22 +42,22 @@ export default function Hero() {
         </p>
 
         <div className="flex items-center justify-center gap-3 flex-wrap">
-          <button
-            style={{
-              backgroundColor: "#F0F0F0",
-              color: "#0F0F0F",
-              fontSize: 14,
-              fontWeight: 500,
-              padding: "10px 22px",
-              borderRadius: 8,
-              border: "none",
-              cursor: "pointer",
-            }}
-            className="hover:bg-[#DEDEDE] transition-colors"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 500, damping: 20 }}
           >
-            Start logging
-          </button>
-          <button
+            <Link
+              to="/signin"
+              className="bg-[#F0F0F0] text-[#0F0F0F] text-sm font-medium px-5 py-2.5 rounded-sm transition-colors hover:bg-[#DEDEDE] block"
+            >
+              Start logging
+            </Link>
+          </motion.div>
+          <motion.button
+            whileHover={{ scale: 1.05, borderColor: "#888" }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 500, damping: 20 }}
             style={{
               backgroundColor: "transparent",
               color: "#C0C0C0",
@@ -70,7 +71,7 @@ export default function Hero() {
             className="hover:border-[#404040] hover:text-[#F0F0F0] transition-colors"
           >
             See an example
-          </button>
+          </motion.button>
         </div>
       </motion.div>
 
