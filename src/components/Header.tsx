@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Header() {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path: string) => () => {
+    navigate(path);
+  };
+
   return (
     <nav style={{ borderBottom: "1px solid #161616" }}>
       <div
@@ -33,6 +41,7 @@ export default function Header() {
               borderRadius: 6,
             }}
             className="hover:text-[#E8E8E8] transition-colors"
+            onClick={handleNavigate('/signin')}
           >
             Sign in
           </button>
@@ -48,6 +57,7 @@ export default function Header() {
               cursor: "pointer",
             }}
             className="hover:bg-[#DEDEDE] transition-colors"
+            onClick={handleNavigate('/reg')}
           >
             Get started
           </button>
