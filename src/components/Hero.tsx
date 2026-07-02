@@ -1,7 +1,14 @@
+import { motion } from "framer-motion";
+import LogCard from "./LogCard";
+import entries from "../locales/entries.json"
+
 export default function Hero() {
   return (
     <>
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
         style={{
           maxWidth: 560,
           margin: "0 auto",
@@ -65,7 +72,7 @@ export default function Hero() {
             See an example
           </button>
         </div>
-      </div>
+      </motion.div>
 
       <div style={{ maxWidth: 580, margin: "0 auto", padding: "0 24px" }}>
         <p
@@ -82,6 +89,10 @@ export default function Hero() {
           Recent from the community
         </p>
       </div>
+
+      {entries.map((entry) => (
+        <LogCard key={entry.id} entry={entry} />
+      ))}
     </>
   );
 }
