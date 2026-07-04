@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
-export default function Header() {
+type HeaderProps = {
+  mode: "default" | "minimal";
+};
+
+export default function Header({ mode }: HeaderProps) {
   const navigate = useNavigate();
 
   const handleNavigate = (path: string) => () => {
@@ -30,37 +34,66 @@ export default function Header() {
         </span>
 
         <div className="flex items-center gap-2">
-          <button
-            style={{
-              fontSize: 13,
-              color: "#555555",
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              padding: "6px 12px",
-              borderRadius: 6,
-            }}
-            className="hover:text-[#E8E8E8] transition-colors"
-            onClick={handleNavigate('/signin')}
-          >
-            Sign in
-          </button>
-          <button
-            style={{
-              fontSize: 13,
-              fontWeight: 500,
-              color: "#0F0F0F",
-              backgroundColor: "#F0F0F0",
-              border: "none",
-              borderRadius: 6,
-              padding: "6px 14px",
-              cursor: "pointer",
-            }}
-            className="hover:bg-[#DEDEDE] transition-colors"
-            onClick={handleNavigate('/reg')}
-          >
-            Get started
-          </button>
+          {mode === "default" ? (
+            <>
+              <button
+                style={{
+                  fontSize: 13,
+                  color: "#555555",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: "6px 12px",
+                  borderRadius: 6,
+                }}
+                className="hover:text-[#E8E8E8] transition-colors"
+                onClick={handleNavigate("/signin")}
+              >
+                Sign in
+              </button>
+              <button
+                style={{
+                  fontSize: 13,
+                  fontWeight: 500,
+                  color: "#0F0F0F",
+                  backgroundColor: "#F0F0F0",
+                  border: "none",
+                  borderRadius: 6,
+                  padding: "6px 14px",
+                  cursor: "pointer",
+                }}
+                className="hover:bg-[#DEDEDE] transition-colors"
+                onClick={handleNavigate("/reg")}
+              >
+                Get started
+              </button>
+            </>
+          ) : (
+            <>
+              <span
+                style={{
+                  fontSize: 13,
+                  color: "#555555",
+                }}
+              >
+                Already have an account?
+              </span>
+              <button
+                style={{
+                  fontSize: 13,
+                  color: "#C8C8C8",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: "4px 6px",
+                  fontWeight: 500,
+                }}
+                className="hover:text-white transition-colors"
+              >
+                Sign in
+              </button>
+            </>
+          )}
         </div>
       </div>
     </nav>

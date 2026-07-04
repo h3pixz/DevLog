@@ -48,7 +48,7 @@ export default function Hero() {
             transition={{ type: "spring", stiffness: 500, damping: 20 }}
           >
             <Link
-              to="/signin"
+              to="/reg"
               className="bg-[#F0F0F0] text-[#0F0F0F] text-sm font-medium px-5 py-2.5 rounded-sm transition-colors hover:bg-[#DEDEDE] block"
             >
               Start logging
