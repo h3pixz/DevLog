@@ -184,6 +184,12 @@ export default function RegisterPage() {
             >
               Create account
             </button>
+
+            <div className="flex items-center gap-3" style={{ margin: "24px 0" }}>
+              <div style={{ flex: 1, height: 1, backgroundColor: "#1A1A1A" }} />
+              <span style={{ fontSize: 12, color: "#2E2E2E" }}>or</span>
+              <div style={{ flex: 1, height: 1, backgroundColor: "#1A1A1A" }} />
+            </div>
           </form>
         </div>
       </div>
