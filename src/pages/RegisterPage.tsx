@@ -177,6 +177,13 @@ export default function RegisterPage() {
               </span>
               .
             </p>
+
+            <button
+              className="cursor-pointer bg-[#f0f0f0] text-[#0f0f0f] w-full text-sm font-medium rounded-lg border-none"
+              style={{ padding: "11px 0" }}
+            >
+              Create account
+            </button>
           </form>
         </div>
       </div>
