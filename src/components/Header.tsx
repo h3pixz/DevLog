@@ -28,7 +28,9 @@ export default function Header({ mode }: HeaderProps) {
             fontWeight: 600,
             color: "#F0F0F0",
             letterSpacing: "-0.03em",
+            cursor: "pointer"
           }}
+          onClick={handleNavigate('/')}
         >
           devlog
         </span>
