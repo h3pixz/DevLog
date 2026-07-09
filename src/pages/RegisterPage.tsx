@@ -51,7 +51,9 @@ export default function RegisterPage() {
     return s;
   })();
 
-  const strengthColor = ["", "#7A3A3A", "#A08A48", "#4D8A6A", "#4A7AA5"][strength];
+  const strengthColor = ["", "#7A3A3A", "#A08A48", "#4D8A6A", "#4A7AA5"][
+    strength
+  ];
   const strengthLabel = ["", "Weak", "Fair", "Good", "Strong"][strength];
 
   return (
@@ -72,41 +74,41 @@ export default function RegisterPage() {
           </div>
 
           <form>
-          <div className="flex flex-col gap-4">
-            <Field
-              label="Full name"
-              placeholder="Ada Lovelace"
-              value={name.value}
-              onChange={(v) => setName({ value: v, touched: false })}
-              onBlur={() => setName((s) => ({ ...s, touched: true }))}
-              error={name.touched ? errors.name : ""}
-            />
+            <div className="flex flex-col gap-4">
+              <Field
+                label="Full name"
+                placeholder="Ada Lovelace"
+                value={name.value}
+                onChange={(v) => setName({ value: v, touched: false })}
+                onBlur={() => setName((s) => ({ ...s, touched: true }))}
+                error={name.touched ? errors.name : ""}
+              />
 
-            <Field
-              label="Username"
-              placeholder="@adalovelace"
-              value={handle.value}
-              onChange={(v) => setHandle({ value: v, touched: false })}
-              onBlur={() => setHandle((s) => ({ ...s, touched: true }))}
-              error={handle.touched ? errors.handle : ""}
-              hint={
-                !handle.touched && !errors.handle && handle.value
-                  ? `Your profile will be devlog.sh/${handleVal}`
-                  : ""
-              }
-            />
+              <Field
+                label="Username"
+                placeholder="@adalovelace"
+                value={handle.value}
+                onChange={(v) => setHandle({ value: v, touched: false })}
+                onBlur={() => setHandle((s) => ({ ...s, touched: true }))}
+                error={handle.touched ? errors.handle : ""}
+                hint={
+                  !handle.touched && !errors.handle && handle.value
+                    ? `Your profile will be devlog.sh/${handleVal}`
+                    : ""
+                }
+              />
 
-            <Field
-              label="Email"
-              type="email"
-              placeholder="ada@example.com"
-              value={email.value}
-              onChange={(v) => setEmail({ value: v, touched: false })}
-              onBlur={() => setEmail((s) => ({ ...s, touched: true }))}
-              error={email.touched ? errors.email : ""}
-            />
+              <Field
+                label="Email"
+                type="email"
+                placeholder="ada@example.com"
+                value={email.value}
+                onChange={(v) => setEmail({ value: v, touched: false })}
+                onBlur={() => setEmail((s) => ({ ...s, touched: true }))}
+                error={email.touched ? errors.email : ""}
+              />
 
-            <div>
+              <div>
                 <Field
                   label="Password"
                   type="password"
@@ -117,7 +119,10 @@ export default function RegisterPage() {
                   error={password.touched ? errors.password : ""}
                 />
                 {password.value && (
-                  <div className="flex items-center gap-2.5" style={{ marginTop: 8 }}>
+                  <div
+                    className="flex items-center gap-2.5"
+                    style={{ marginTop: 8 }}
+                  >
                     <div className="flex gap-1" style={{ flex: 1 }}>
                       {[1, 2, 3, 4].map((i) => (
                         <div
@@ -126,22 +131,55 @@ export default function RegisterPage() {
                             flex: 1,
                             height: 3,
                             borderRadius: 2,
-                            backgroundColor: i <= strength ? strengthColor : "#1E1E1E",
+                            backgroundColor:
+                              i <= strength ? strengthColor : "#1E1E1E",
                             transition: "background-color 0.2s",
                           }}
                         />
                       ))}
                     </div>
-                    <span style={{ fontSize: 11, color: strengthColor, fontWeight: 500, minWidth: 36 }}>
+                    <span
+                      style={{
+                        fontSize: 11,
+                        color: strengthColor,
+                        fontWeight: 500,
+                        minWidth: 36,
+                      }}
+                    >
                       {strengthLabel}
                     </span>
                   </div>
                 )}
               </div>
-          </div>
-        </form>
+            </div>
+            <p
+              style={{
+                fontSize: 12,
+                color: "#3A3A3A",
+                lineHeight: 1.6,
+                marginTop: 20,
+                marginBottom: 20,
+              }}
+            >
+              By creating an account you agree to our{" "}
+              <span
+                style={{ color: "#555555", cursor: "pointer" }}
+                className="hover:text-[#888] transition-colors"
+              >
+                Terms of Service
+              </span>{" "}
+              and{" "}
+              <span
+                style={{ color: "#555555", cursor: "pointer" }}
+                className="hover:text-[#888] transition-colors"
+              >
+                Privacy Policy
+              </span>
+              .
+            </p>
+          </form>
+        </div>
       </div>
-    </div>
     </>
   );
 }
