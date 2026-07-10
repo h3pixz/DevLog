@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 type HeaderProps = {
-  mode: "default" | "minimal";
+  mode: "have-acc" | "no-acc";
 };
 
 export default function Header({ mode }: HeaderProps) {
@@ -28,15 +28,67 @@ export default function Header({ mode }: HeaderProps) {
             fontWeight: 600,
             color: "#F0F0F0",
             letterSpacing: "-0.03em",
-            cursor: "pointer"
+            cursor: "pointer",
           }}
-          onClick={handleNavigate('/')}
+          onClick={handleNavigate("/")}
         >
           devlog
         </span>
 
         <div className="flex items-center gap-2">
-          {mode === "default" ? (
+          {mode === "no-acc" ? (
+            <>
+              <span
+                style={{
+                  fontSize: 13,
+                  color: "#555555",
+                }}
+              >
+                No account yet?
+              </span>
+              <button
+                style={{
+                  fontSize: 13,
+                  color: "#C8C8C8",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: "4px 6px",
+                  fontWeight: 500,
+                }}
+                className="hover:text-white transition-colors"
+                onClick={handleNavigate("/reg")}
+              >
+                Sign up
+              </button>
+            </>
+          ) : mode === "have-acc" ? (
+            <>
+              <span
+                style={{
+                  fontSize: 13,
+                  color: "#555555",
+                }}
+              >
+                Already have an account?
+              </span>
+              <button
+                style={{
+                  fontSize: 13,
+                  color: "#C8C8C8",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: "4px 6px",
+                  fontWeight: 500,
+                }}
+                className="hover:text-white transition-colors"
+                onClick={handleNavigate("/signin")}
+              >
+                Sign in
+              </button>
+            </>
+          ) : (
             <>
               <button
                 style={{
@@ -68,32 +120,6 @@ export default function Header({ mode }: HeaderProps) {
                 onClick={handleNavigate("/reg")}
               >
                 Get started
-              </button>
-            </>
-          ) : (
-            <>
-              <span
-                style={{
-                  fontSize: 13,
-                  color: "#555555",
-                }}
-              >
-                Already have an account?
-              </span>
-              <button
-                style={{
-                  fontSize: 13,
-                  color: "#C8C8C8",
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  padding: "4px 6px",
-                  fontWeight: 500,
-                }}
-                className="hover:text-white transition-colors"
-                onClick={handleNavigate("/signin")}
-              >
-                Sign in
               </button>
             </>
           )}

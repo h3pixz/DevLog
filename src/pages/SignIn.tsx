@@ -1,5 +1,9 @@
+import Header from "../components/Header";
+
 export default function SignIn() {
-    return (
-        <>lolkek</>
-    )
+  return (
+    <>
+      <Header mode="no-acc" />
+    </>
+  );
 }
