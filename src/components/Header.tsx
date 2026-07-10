@@ -91,6 +91,7 @@ export default function Header({ mode }: HeaderProps) {
                   fontWeight: 500,
                 }}
                 className="hover:text-white transition-colors"
+                onClick={handleNavigate("/signin")}
               >
                 Sign in
               </button>
