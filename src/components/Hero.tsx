@@ -54,24 +54,30 @@ export default function Hero() {
               Start logging
             </Link>
           </motion.div>
-          <motion.button
+          <motion.div
             whileHover={{ scale: 1.05, borderColor: "#888" }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 500, damping: 20 }}
-            style={{
-              backgroundColor: "transparent",
-              color: "#C0C0C0",
-              fontSize: 14,
-              fontWeight: 400,
-              padding: "10px 22px",
-              borderRadius: 8,
-              border: "1px solid #2A2A2A",
-              cursor: "pointer",
-            }}
-            className="hover:border-[#404040] hover:text-[#F0F0F0] transition-colors"
           >
-            See an example
-          </motion.button>
+            <Link
+              to="/signin"
+              style={{
+                backgroundColor: "transparent",
+                color: "#C0C0C0",
+                fontSize: 14,
+                fontWeight: 400,
+                padding: "10px 22px",
+                borderRadius: 8,
+                border: "1px solid #2A2A2A",
+                cursor: "pointer",
+                textDecoration: "none",
+                display: "inline-block",
+              }}
+              className="hover:border-[#404040] hover:text-[#F0F0F0] transition-colors"
+            >
+              See an example
+            </Link>
+          </motion.div>
         </div>
       </motion.div>
 
