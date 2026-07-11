@@ -1,15 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import useNavigation from "../utils/navigation";
 
 type HeaderProps = {
-  mode: "have-acc" | "no-acc";
+  mode: "have-acc" | "no-acc" | "default";
 };
 
 export default function Header({ mode }: HeaderProps) {
-  const navigate = useNavigate();
-
-  const handleNavigate = (path: string) => () => {
-    navigate(path);
-  };
+  const { goTo } = useNavigation();
 
   return (
     <nav style={{ borderBottom: "1px solid #161616" }}>
@@ -30,7 +26,7 @@ export default function Header({ mode }: HeaderProps) {
             letterSpacing: "-0.03em",
             cursor: "pointer",
           }}
-          onClick={handleNavigate("/")}
+          onClick={() => goTo("/")}
         >
           devlog
         </span>
@@ -57,7 +53,7 @@ export default function Header({ mode }: HeaderProps) {
                   fontWeight: 500,
                 }}
                 className="hover:text-white transition-colors"
-                onClick={handleNavigate("/reg")}
+                onClick={() => goTo("/reg")}
               >
                 Sign up
               </button>
@@ -83,7 +79,7 @@ export default function Header({ mode }: HeaderProps) {
                   fontWeight: 500,
                 }}
                 className="hover:text-white transition-colors"
-                onClick={handleNavigate("/signin")}
+                onClick={() => goTo("/signin")}
               >
                 Sign in
               </button>
@@ -101,7 +97,7 @@ export default function Header({ mode }: HeaderProps) {
                   borderRadius: 6,
                 }}
                 className="hover:text-[#E8E8E8] transition-colors"
-                onClick={handleNavigate("/signin")}
+                onClick={() => goTo("/signin")}
               >
                 Sign in
               </button>
@@ -117,7 +113,7 @@ export default function Header({ mode }: HeaderProps) {
                   cursor: "pointer",
                 }}
                 className="hover:bg-[#DEDEDE] transition-colors"
-                onClick={handleNavigate("/reg")}
+                onClick={() => goTo("/reg")}
               >
                 Get started
               </button>
