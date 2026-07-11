@@ -14,7 +14,7 @@ export default function FeedPage() {
 
   return (
     <div>
-      <div className="max-w-1080 mx-auto grid grid-cols-[400px_1fr_400px] min-h-screen">
+      <div className="max-w-1080 mx-auto grid grid-cols-[500px_1fr_500px] min-h-screen">
         <aside className="justify-self-end"
           style={{
             borderRight: "1px solid #161616",
