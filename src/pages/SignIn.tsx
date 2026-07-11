@@ -84,14 +84,12 @@ export default function SignIn() {
     setEmail((s) => ({ ...s, touched: true }));
     setPassword((s) => ({ ...s, touched: true }));
     if (errors.email || errors.password) return;
-    // TODO: sign-in logic
   }
 
   return (
     <>
       <Header mode="no-acc" />
       <div style={{ flex: 1, display: "flex", minHeight: 0 }}>
-        {/* Left — form */}
         <div
           style={{
             flex: "0 0 440px",
@@ -373,7 +371,6 @@ export default function SignIn() {
           </div>
         </div>
 
-        {/* Right — social proof */}
         <div
           style={{
             flex: 1,
@@ -385,7 +382,6 @@ export default function SignIn() {
             overflow: "hidden",
           }}
         >
-          {/* Faint grid lines */}
           <div
             style={{
               position: "absolute",
@@ -412,7 +408,6 @@ export default function SignIn() {
               From the community
             </p>
 
-            {/* Featured quote */}
             <blockquote style={{ marginBottom: 32 }}>
               <p
                 style={{
@@ -441,7 +436,6 @@ export default function SignIn() {
               </footer>
             </blockquote>
 
-            {/* Mini feed preview */}
             <div className="flex flex-col gap-2">
               {[entries[0], entries[1], entries[2]].map((e) => (
                 <div
@@ -487,7 +481,6 @@ export default function SignIn() {
               ))}
             </div>
 
-            {/* Stats */}
             <div className="flex gap-8" style={{ marginTop: 36 }}>
               {[
                 { value: "2.4k", label: "developers" },
