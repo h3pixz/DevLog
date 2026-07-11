@@ -1,6 +1,8 @@
 import entries from "../locales/entries.json";
 import { Bookmark, Rss, Settings, User, Flame } from "lucide-react";
 import useNavigation from "../utils/navigation"
+import Composer from "../components/Composer";
+import Avatar from "../components/Avatar";
 
 export default function FeedPage() {
   const navLinks = [
@@ -43,24 +45,7 @@ export default function FeedPage() {
           </button>
 
           <div className="flex items-center gap-3">
-            <div
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                backgroundColor: entries[0].author.color,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#fff",
-                fontSize: 12,
-                fontWeight: 600,
-                flexShrink: 0,
-              }}
-              className="cursor-pointer"
-            >
-              {entries[0].author.initials}
-            </div>
+            <Avatar initials="MW" color="#1E2D45" size={38}/>
 
             <div style={{ minWidth: 0 }}>
               <div
@@ -107,7 +92,8 @@ export default function FeedPage() {
         </aside>
 
         <main className="border-r-1 border-[#161616] p-6">
-            <h2 className="text-base">Feed</h2>
+            <h2 className="text-base mb-2">Feed</h2>
+            <Composer />
         </main>
       </div>
     </div>

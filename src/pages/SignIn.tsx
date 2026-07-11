@@ -2,38 +2,9 @@ import Header from "../components/Header";
 import Field from "../components/Field";
 import { useState } from "react";
 import entries from "../locales/entries.json";
+import Avatar from "../components/Avatar";
 
 type FieldState = { value: string; touched: boolean };
-
-function Avatar({
-  initials,
-  color,
-  size,
-}: {
-  initials: string;
-  color: string;
-  size: number;
-}) {
-  return (
-    <div
-      style={{
-        width: size,
-        height: size,
-        borderRadius: "50%",
-        backgroundColor: color,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: size * 0.42,
-        fontWeight: 600,
-        color: "#C8C8C8",
-        flexShrink: 0,
-      }}
-    >
-      {initials}
-    </div>
-  );
-}
 
 function TagBadge({ type }: { type: string }) {
   const colors: Record<string, string> = {

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Avatar from "./Avatar";
 
 export type LogEntry = {
   id: string;
@@ -33,23 +34,7 @@ export default function LogCard({ entry }: Props) {
         className="mx-auto max-w-lg"
       >
         <div className="flex items-start gap-3">
-          <div
-            style={{
-              width: 32,
-              height: 32,
-              borderRadius: "50%",
-              backgroundColor: entry.author.color,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#fff",
-              fontSize: 12,
-              fontWeight: 600,
-              flexShrink: 0,
-            }}
-          >
-            {entry.author.initials}
-          </div>
+          <Avatar initials={entry.author.initials} color={entry.author.color}/>
 
           <div style={{ flex: 1, minWidth: 0 }}>
             <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-2">
