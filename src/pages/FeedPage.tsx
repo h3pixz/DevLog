@@ -14,11 +14,11 @@ export default function FeedPage() {
 
   return (
     <div>
-      <div className="max-w-1080 mx-auto grid grid-cols-[220px_1fr_248px] min-h-screen">
-        <aside
+      <div className="max-w-1080 mx-auto grid grid-cols-[400px_1fr_400px] min-h-screen">
+        <aside className="justify-self-end"
           style={{
             borderRight: "1px solid #161616",
-            padding: "24px 16px",
+            padding: "24px",
             position: "sticky",
             top: 0,
             height: "100vh",
@@ -57,6 +57,7 @@ export default function FeedPage() {
                 fontWeight: 600,
                 flexShrink: 0,
               }}
+              className="cursor-pointer"
             >
               {entries[0].author.initials}
             </div>
@@ -100,10 +101,14 @@ export default function FeedPage() {
           <div style={{ marginTop: "auto", paddingTop: 32, borderTop: "1px solid #1A1A1A", marginLeft: 0 }}>
             <div className="flex items-center gap-2 justify-center" style={{ padding: "0 10px" }}>
               <Flame size={18} style={{ color: "#A08A48" }} />
-              <span className="text-sm text-[#555555]">28 day streak</span>
+              <span className="text-xs text-[#555555]">28 day streak</span>
             </div>
           </div>
         </aside>
+
+        <main className="border-r-1 border-[#161616] p-6">
+            <h2 className="text-base">Feed</h2>
+        </main>
       </div>
     </div>
   );
