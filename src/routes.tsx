@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage"
 import SignIn from "./pages/SignIn";
 import FeedPage from "./pages/FeedPage";
+import ProfilePage from "./pages/ProfilePage";
 
 export const router = createBrowserRouter([
     {
@@ -20,5 +21,9 @@ export const router = createBrowserRouter([
     {
         path: "/feed",
         Component: FeedPage,
+    },
+    {
+        path: "/profile",
+        Component: ProfilePage,
     },
 ])
